@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>404错误页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+        function loadCSS(path){
+            var style = document.createElement("link");
+            style.rel = "stylesheet";
+            style.type = "text/css";
+            style.href = path;
+            document.getElementsByTagName('head')[0].appendChild(style);
+        }
+
+        var host = location.origin;
+        var home = location.pathname.split("/")[1];
+        var url = host + "/" + home;
+        loadCSS(url + "/res/bootstrap/css/bootstrap.css");
+        loadCSS(url + "/res/bootstrap/css/font-awesome.css");
+        loadCSS(url + "/res/ace/css/ace.min.css");
+    </script>
+
+</head>
+<body>
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="error-container">
+        <div class="well">
+            <h1 class="grey lighter smaller">
+                <span class="blue bigger-125">
+                    <i class="icon-sitemap"></i>
+                    404
+                </span>
+                Page Not Found
+            </h1>
+
+            <hr />
+            <h3 class="lighter smaller">We looked everywhere but we couldn't find it!</h3>
+
+            <div>
+                <div class="space"></div>
+                <h4 class="smaller">Try one of the following:</h4>
+                <ul class="list-unstyled spaced inline bigger-110 margin-15">
+                    <li>
+                        <i class="icon-hand-right blue"></i>
+                        Re-check the url for typos
+                    </li>
+                    <li>
+                        <i class="icon-hand-right blue"></i>
+                        Read the faq
+                    </li>
+                    <li>
+                        <i class="icon-hand-right blue"></i>
+                        Tell us about it
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <div class="space"></div>
+
+            <!--<div class="center">-->
+                <!--<a href="#" class="btn btn-grey">-->
+                    <!--<i class="icon-arrow-left"></i>-->
+                    <!--Go Back-->
+                <!--</a>-->
+
+                <!--<a href="#" class="btn btn-primary">-->
+                    <!--<i class="icon-dashboard"></i>-->
+                    <!--Dashboard-->
+                <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div><!-- PAGE CONTENT ENDS -->
+</body>
+</html>

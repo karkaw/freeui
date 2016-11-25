@@ -1,0 +1,21 @@
+/**************************************************************
+* grid样式
+**/
+.sort {
+    float: left;
+    width: 9px;
+    height: 1.428571429em;
+    line-height: 1.428571429em;
+}
+
+.sort-gray {
+    background: url(../img/sort_gray.gif) center no-repeat;
+}
+
+.sort-asc {
+    background: url(../img/sort_asc_red.gif) center no-repeat;
+}
+
+.sort-desc {
+    background: url(../img/sort_desc_red.gif) center no-repeat;
+}

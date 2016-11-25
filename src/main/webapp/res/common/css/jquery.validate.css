@@ -1,0 +1,6 @@
+label.generated{display:none;}
+label.error, label.valid, label.focus, label.normal {ackground:url(../img/wrong.png) no-repeat left center; font-size:12px; color:#666666; padding-left:12px;}
+label.normal {background:url(../img/notes.gif) no-repeat left center; padding-left:12px;}
+label.error {background:url(../img/wrong.png)  no-repeat left center; padding-left:12px;}
+label.valid {background:url(../img/yes.png)  no-repeat left center; padding-left:12px;}
+label.focus {background:url(../img/notes.gif) no-repeat left center; padding-left:12px;}

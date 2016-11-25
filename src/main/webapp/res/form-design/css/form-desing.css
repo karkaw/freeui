@@ -1,0 +1,1066 @@
+@charset "utf-8";
+body{
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*common*/
+.form-w50 {width:50px;}
+.form-w60 {width:60px;}
+.form-w70 {width:70px;}
+.form-w80 {width:80px;}
+.form-w80 {width:90px;}
+.form-w100 {width:100px;}
+.form-w110 {width:110px;}
+.form-w120 {width:120px;}
+.form-w130 {width:130px;}
+.form-w140 {width:140px;}
+.form-w150 {width:150px;}
+.form-w200 {width:200px;}
+.space-line {margin:0 5px;}
+
+.form-hasIcon,.form-hasLabel {position:relative;}
+.form-hasIcon > .form-icon,.form-hasLabel > .form-label {position:absolute;}
+.form-hasIcon > .form-icon {font-size:16px;top:5px;right:7px;color:#666;}
+.form-hasIcon > .form-control {padding-right:25px;}
+.form-hasLabel > .form-control {padding-right:70px;}
+.form-hasLabel > .form-label {font-size:12px;top:7px;right:10px;color:#999;}
+
+label.radio, label.checkbox {font-weight:normal;}
+.form-view ul {	padding:0;margin:0;list-style:none;}
+
+/*ckeditor focus*/
+.cke_editable.cke_editable_inline.cke_focus {
+    background: none repeat scroll 0 0 #EEEEEE;
+    box-shadow: 0 0 20px 3px #DDDDDD inset, 0 0 1px #000000 inset;
+    cursor: text;
+    outline: medium none;
+}
+/*滚动条样式调整*/
+.form-view-wrapper .mCSB_container {
+    margin-right:0;
+}
+.form-view-wrapper .mCS-darkblue > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background:rgba(255,255,255,.7);
+    right:1px;
+}
+
+/*=======表单视图样式开始========*/
+.form-view-bg {
+    background-color:#92CAE9;
+    position:absolute;
+    z-index:-1;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.form-view {
+    box-shadow:0 0px 5px rgba(0, 0, 0, 0.4);
+    min-height:400px;
+    background:#fff;
+    margin:15px;
+    min-height: 680px;
+}
+.form-view .form-head {
+    padding:20px 10px 12px;
+    /* 	border-top: 15px solid #f5f5f5; */
+    position:relative;
+    word-wrap:break-word;
+    word-break:break-all;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.form-view .form-head .form-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 3px 110px 2px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.form-view .form-head .form-description {
+    color:#666;
+    padding:5px 10px;
+}
+.form-view .form-head .form-description p {
+    margin:0;
+}
+.widget-control {
+    padding-bottom:50px;
+}
+.form-preview .widget-control {
+    padding-bottom:0;
+}
+.form-foot {
+    padding:10px 20px;
+    background-color:#f5f5f5;
+    border-top:1px solid #ddd;
+}
+.form-foot .btn {
+    min-width:80px;
+}
+.widget-viewlist {
+    padding:15px;
+}
+/*==========表单布局样式=============*/
+.field {
+    padding:6px 20px 10px;
+    border:1px dashed rgba(0,0,0,0);
+    position:relative;
+    background:#fff;
+}
+.field:after,
+.field:before {
+    display: table;
+    content: " ";
+    clear:both;
+}
+.field:hover {
+    border-color:#999;
+}
+.field-active {
+    background:#fff8dc;
+    border-color:#ddd;
+}
+.form-placeholder, .form-placeholder-filed {
+    height:80px;
+    border:2px dashed #DB4040;
+    padding: 25px 0;
+    text-align: center;
+}
+.form-layout {
+    border-width:1px 0;
+    border-style:solid;
+    border-color:#7fcdfd;
+    position:relative;
+    margin:5px 0;
+    background:#ecf9ff;
+}
+.column-layout {
+    display:table;
+    width:100%;
+}
+.column-layout .cell {
+    display:table-cell;
+    vertical-align:top;
+    height:51px;
+    border-left:1px solid #7FCDFD;
+}
+.column-layout .cell:first-child {
+    border-left:none !important;
+}
+.columns-2 .cell {
+    width:50%;
+}
+.columns-3 .cell {
+    width:33.3333%;
+}
+
+/*============表单各控件样式============*/
+.field-description {
+    border-top:1px dashed #ccc;
+    padding:3px 0;
+    color:#666;
+    word-break:break-all;
+}
+.field-hoz .field-description {
+    border-bottom:1px dashed #ccc;
+    border-top:none;
+    margin-bottom:10px;
+}
+.form-view .form-group {
+    margin-bottom:0;
+}
+.form-view .widget-title {
+    font-size:14px;
+    font-weight:700;
+    color:#555;
+    display:block;
+    cursor:default;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.form-view .form-control[disabled] {
+    background:#fff;
+    cursor:default;
+}
+.form-view textarea.form-control {
+    resize:none !important;
+    word-break:break-all;
+}
+.form-view .field-hoz .widget-title {
+    width:85px;
+    float:left;
+    margin-top:6px;
+    text-align:right;
+}
+.form-view .field-hoz .widget-content {
+    margin-left:100px;
+}
+/*单行与多行文本框*/
+.edit .form-view input,
+.edit .form-view textarea,
+.edit .form-view select,
+.edit .form-amountbox {
+    -webkit-transition: width .3s ease-in-out, height .3s ease-in-out;
+    transition: width .3s ease-in-out, height .3s ease-in-out;
+}
+.form-view .large{
+    width:100%;
+}
+.form-view .medium {
+    width:75%;
+}
+.form-view .small {
+    width:50%;
+}
+.form-view textarea.large {
+    min-height:200px;
+}
+.form-view textarea.medium {
+    min-height:130px;
+}
+.form-view textarea.small {
+    min-height:80px;
+}
+/*多行文本框两列布局高度*/
+.form-view textarea.large {
+    min-height:130px;
+}
+.form-view textarea.medium {
+    min-height:100px;
+}
+.form-view textarea.small {
+    min-height:80px;
+}
+/*多行文本框三列布局高度*/
+.form-view textarea.large {
+    min-height:100px;
+}
+.form-view textarea.medium {
+    min-height:80px;
+}
+.form-view textarea.small {
+    min-height:60px;
+}
+/*布局中横版时间选择控件*/
+.columns-3 .field-hoz .form-timebox {
+    width:100%;
+}
+.columns-3 .field-hoz .form-timebox input{
+    width:100%;
+}
+/*两栏中横版时间控件,三栏中时间控件,子表三栏中时间控件*/
+.columns-2 .field-hoz .form-timebox-wrap .space-line,
+.columns-3 .form-timebox-wrap .space-line,
+.one-three .form-timebox-wrap .space-line {
+    text-indent:-9999px !important;
+    height:8px;
+    display:block;
+}
+
+
+/*选择框*/
+.radio, .checkbox {
+    margin-top:0;
+}
+.form-view .radio input[type="radio"],
+.form-view .radio-inline input[type="radio"],
+.form-view .checkbox input[type="checkbox"],
+.form-view .checkbox-inline input[type="checkbox"]{
+    margin:0 3px 0 -20px;
+}
+.widget-content .choicelist {
+    margin-top:7px;
+}
+.widget-content select.choicelist {
+    margin-top:0;
+}
+.choicelist li {
+    display:block;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+.choicelist li label {
+    font-weight:normal;
+}
+.choicelist li label input[type="checkbox"],
+.choicelist li label input[type="radio"] {
+    cursor:default;
+    font-weight:normal;
+}
+.choicelist-inline li {
+    display:inline-block;
+    margin-right:10px;
+    margin-bottom:0;
+}
+.choicelist input[type="radio"],
+.choicelist input[type="checkbox"]{
+    vertical-align:middle;
+    margin:0 2px 0 0;
+    position: relative;
+    top: 2px;
+    vertical-align: baseline;
+}
+.choicelist .input-otherchoice {
+    margin:0 4px;
+    display:inline-block;
+}
+.columns-3 .choicelist .input-otherchoice,
+.one-three .choicelist .input-otherchoice {
+    margin:0;
+    width:100%;
+}
+
+/*分割线*/
+.divider-line {
+    height:0;
+    margin-top:5px;
+    border-color:#999;
+    border-width:1px 0 0;
+    border-width:1px 0 0;
+}
+.divider-line.solid,
+.divider-line.thicksolid,
+.divider-line.solid-double,
+.divider-line.thicksolid-double {
+    border-style:solid;
+}
+.divider-line.dashed,
+.divider-line.thickdashed{
+    border-style:dashed;
+}
+.divider-line.thicksolid,
+.divider-line.thickdashed {
+    border-width:2px 0 0;
+}
+.divider-line.solid-double {
+    border-width:1px 0;
+    height:3px;
+}
+.divider-line.thicksolid-double{
+    border-width:2px 0;
+    height:5px;
+}
+.m-type {
+    font-size:12px;
+    color:#999;
+    margin:3px 0 0 3px;
+    display:inline-block;
+}
+.form-amountbox input {
+    display:inline-block;
+}
+/*金额控件在各列布局中大小*/
+.form-view .form-amountbox .large {
+    width:30%;
+}
+.form-view .form-amountbox .medium {
+    width:18%;
+}
+.form-view .form-amountbox .small {
+    width:12%;
+}
+.form-view .columns-2 .form-amountbox .large {
+    width:70%;
+}
+.form-view .columns-2 .form-amountbox .medium {
+    width:50%;
+}
+.form-view .columns-2 .form-amountbox .small {
+    width:30%;
+}
+.form-view .columns-3 .form-amountbox .large,
+.form-view .form-databox .form-amountbox .large {
+    width:56%;
+}
+.form-view .columns-3 .form-amountbox .medium,
+.form-view .form-databox .form-amountbox .medium {
+    width:45%;
+}
+.form-view .columns-3 .form-amountbox .small,
+.form-view .form-databox .form-amountbox .small {
+    width:25%;
+}
+/*日期区间在三栏布局中样式*/
+.columns-3 .field .space-line {
+    display:block;
+    text-indent:65px;
+}
+.form-timebox {
+    width:150px;
+}
+.form-timebox input {
+    width:100%;
+}
+.form-timebox .form-icon {
+    display:none;
+}
+/*用户选择控件*/
+.field .employee-item{
+    display: inline-block;
+    line-height:28px;
+    margin-right: 2px;
+}
+.field .employee-item a{
+    display:inline-block;
+    padding-right: 15px;
+}
+.field .employee-item i{
+    color: #51a351;
+}
+.field .employee-item .close{
+    padding-right: 0px;
+    margin-left: -15px;
+    display:none;
+    line-height:26px;
+}
+.field .employee-item:hover .close {
+    display:block;
+}
+.field .employee-item .close:hover{
+    color: red;
+}
+.field .form-userList {
+    margin-top:2px;
+    min-height:32px;
+}
+.field .form-userList > div {
+    display:inline-block;
+}
+/*段落控件*/
+.field .paragraph {
+    word-break:break-all;
+}
+.paragraph ul,.paragraph ol {
+    padding-left:40px;
+}
+.paragraph ul li {
+    list-style:disc;
+}
+.paragraph ol li {
+    list-style:decimal;
+}
+.field .paragraph p:last-child {
+    margin-bottom:0;
+}
+.field .paragraph.alert{
+    margin-bottom:0;
+}
+.paragraphchoicelist .paragraph.alert {
+    margin:3px 0 0 10px;
+    width:70%;
+}
+.paragraphchoicelist > label {
+    display:block;
+}
+.paragraph.alert-e-default {
+    border:1px solid #eee;
+    background:#f9f9f9;
+}
+/*错误提示*/
+.form-view .form-error:after {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FF6969;
+    border-style: solid;
+    border-width: 6px;
+    content: "";
+    height: 0;
+    left: 15px;
+    position: absolute;
+    top: -11px;
+}
+.form-view .form-error {
+    background: none repeat scroll 0 0 #FF6969;
+    border-radius: 4px;
+    bottom: -11px;
+    color: #FFFFFF;
+    display: none;
+    font-size: 11px;
+    opacity: 0.8;
+    padding: 0 3px;
+    position: absolute;
+    z-index:100;
+}
+.form-view .field-hoz .form-error {
+    left:120px;
+}
+.form-view .form-databox .field-hoz .form-error {
+    left:auto;
+}
+/*子表编辑样式*/
+.form-view .form-databox-wrap {
+    position:relative;
+    padding:0 20px;
+    margin:6px 0;
+}
+.form-view .form-databox {
+    overflow-x:auto;
+    min-height:72px;
+    position:relative;
+}
+.edit .form-view .form-databox table td {
+    padding:0;
+    min-width:241px;
+}
+.form-view .form-databox table {
+    margin-bottom:0;
+}
+.form-view .form-databox .field {
+    padding:50px 12px 10px;
+}
+.form-view .form-databox .field:hover {
+    background:#f3f3f3;
+}
+.form-view .form-databox-wrap .form-layout-toolbar {
+    right:20px;
+    bottom:0;
+}
+.form-view .form-databox .widget-title {
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:8px 12px;
+    margin-left:-12px;
+    margin-bottom:12px;
+    background:#f0f0f0;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.form-view .form-databox .field:hover .widget-title {
+    background:#f3f3f3;
+}
+.form-view .form-databox .field-active .widget-title,
+.form-view .form-databox .field-active:hover .widget-title,
+.form-view .form-databox .field-active:hover {
+    background:#fff8dc;
+}
+.form-view .form-databox td.form-placeholder-filed {
+    display:inline-block;
+    border:1px dashed #DB4040;
+    height:70px !important;
+}
+.form-view .form-databox .form-error {
+    bottom:-22px;
+}
+/*子表中禁止切换布局*/
+.form-view .form-databox .field-hoz .widget-title {
+    margin-top:0 !important;
+    text-align:left !important;
+}
+.form-view .form-databox .field-hoz .widget-content {
+    margin-left:0 !important;
+}
+.workflow-wrap .form-view {
+    box-shadow:none;
+    padding:0;
+    min-height:0;
+    width:auto;
+    marign:15px;
+}
+/*搜索样式调整*/
+.form-view .typeahead-wrapper {
+    float:none;
+    vertical-align:middle;
+}
+.form-view input.typeahead {
+    height:28px;
+    width:66px;
+}
+.form-view .typeahead-search {
+    width:26px;
+    height:26px;
+}
+.edit.form-preview .typeahead-search i {
+    line-height:26px;
+}
+
+/*加载动画-大尺寸*/
+.form-view .loading-big {
+    position:relative;
+    text-align:center;
+}
+.form-view .loading-big img {
+    width:120px;
+}
+.form-view .loading-text {
+    position:absolute;
+    top:48px;
+    width:100%;
+    font-size:12px;
+    display:block;
+    color:#666;
+}
+.form-view .form-loading {
+    opacity:0.5;
+    marign-top:20px;
+}
+.edit .form-loading {
+    display:none !important;
+}
+/*===========预览样式调整=============*/
+.form-preview-wrapper {
+    overflow-y:auto;
+    background-color:#ffffff;    position:fixed;
+    z-index:1000;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+.form-preview-wrapper .form-preview{
+    width:800px;
+    margin:0 auto;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    background:#fff;
+    margin:15px auto 15px;
+    border-radius:4px;
+}
+.form-preview .form-view {
+    margin:15px;
+    border:1px solid #ccc;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    min-height:0;
+}
+/*预览输入框样式*/
+.form-preview .form-control::-moz-placeholder {
+    color: #A8A8A8;
+    font-style:italic;
+    opacity: 1;
+}
+.form-preview .form-control:-ms-input-placeholder {
+    color: #A8A8A8;
+    font-style:italic;
+}
+.form-preview .form-control::-webkit-input-placeholder {
+    color: #A8A8A8;
+    font-style:italic;
+}
+.form-preview input,
+.form-preview textarea{
+    border-color:transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.form-preview input:hover,
+.form-preview textarea:hover{
+    border-color:#ddd;
+}
+.form-preview input:focus,
+.form-preview textarea:focus{
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.form-preview-wrapper .form-view .form-head {
+    border-bottom:1px solid #ccc;
+    background:#f5f5f5;
+}
+.form-preview .field:hover {
+    border-color:transparent;
+}
+.form-preview .field {
+    border-bottom:1px solid #ccc !important;
+}
+.form-preview .form-view .field:last-child,
+.form-preview .form-view .widget-control .field:last-child{
+    border:none !important;
+}
+.form-preview .form-layout .field,
+.form-preview .form-databox .field {
+    border-bottom:none !important;
+}
+.form-preview .form-databox .table {
+    border:none !important;
+}
+.form-preview .form-databox .table tr > td:first-child {
+    border-left:none !important;
+}
+.form-preview .form-databox .table tr > td:last-child {
+    border-right:none !important;
+}
+
+.form-preview .form-layout{
+    background:transparent;
+    border-width:1px 0 0;
+    border-color:#ccc;
+    margin:0;
+}
+.form-preview .form-layout .cell{
+    border-color:#ccc;
+}
+.form-preview .form-layout .cell .field:last-child{
+    border:none;
+}
+.form-btns .btn {
+    margin-left:10px;
+}
+/*子表预览样式*/
+.form-preview .form-view .form-databox-wrap {
+    margin:0;
+    padding:0;
+}
+.form-preview .form-view .form-databox .widget-title {
+    position:relative;
+    width:auto;
+    margin:0;
+    border-bottom:none;
+}
+.form-preview .form-view .form-databox table th {
+    padding:0;
+    border-width: 0 1px 1px 0;
+    min-width:238px;
+}
+.form-preview .form-view .form-databox table .subtd_option {
+    min-width:50px;
+    text-align: center;
+}
+.form-preview .form-view .form-databox table td {
+    padding:6px 8px;
+}
+.form-preview .form-view .form-databox .field {
+    padding:0;
+    background:none;
+}
+.form-preview .form-view .form-databox table td {
+    min-width:0px;
+}
+
+.form-preview .field-divider {
+    padding:10px 0;
+    border-bottom:1px solid #ccc !important;
+}
+.form-preview .field-divider .divider-line {
+    margin:0;
+}
+.form-preview .form-view input.form-control,
+.form-preview .form-view select.form-control,
+.form-preview .form-view textarea.form-control {
+    background:transparent;
+    transition:background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear !important;
+    -moz-transition:background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear !important;
+    -webkit-transition:background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear !important;
+    -ms-transition:background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear !important;
+}
+.form-preview .form-view input.form-control:hover,
+.form-preview .form-view textarea.form-control:hover {
+    border-color:#ccc;
+    background:#fcfcfc;
+}
+.form-preview .form-view input.form-control:focus,
+.form-preview .form-view textarea.form-control:focus {
+    border-color:#66afe9;
+}
+.form-preview input.datetimepicker{
+    padding:5px 10px;
+}
+/*文本编辑器*/
+.form-widgetEdit .cke_path {
+    display:none;
+}
+.engine-search{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 26px;
+    margin: 0;
+    padding: 3px;
+    position: relative;
+    width: 20px;
+}
+.engine-search i {
+    color: #0088cc;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/*=============公用样式============*/
+
+.form-lead {
+    padding-left:10px;
+    background-color:#e5f0f9;
+    line-height:40px;
+    font-size:14px;
+    font-weight:bold;
+}
+.form-lead-tab {
+    padding-top:4px;
+    position:relative;
+    top:1px;
+    height:40px;
+    z-index:1px;
+    line-height:35px;
+}
+.form-lead-tab li {
+    display:inline-block;
+    margin-right: 5px;
+}
+.form-lead-tab li a {
+    border-width:1px 1px 0;
+    border-style:solid;
+    border-color:rgba(0,0,0,0);
+    padding:0 12px;
+    display:block;
+    color:#666;
+    text-decoration:none;
+}
+.form-lead-tab li a:hover, .form-lead-tab li a.active {
+    border-radius:3px 3px 0 0;
+    background-color:#fff;
+    border-color:#a3adba;
+    color:#428BCA;
+}
+/*===========选择控件===========*/
+.form-widget {
+    position:relative;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    width: 30%;
+    min-height: 700px;
+}
+.form-widget .widget-list {
+    padding:5px 0 0;
+    overflow-y:auto;
+}
+.widget-item {
+    float:left;
+    width:45%;
+    margin:6px 5px;
+    border: 1px dashed #999;
+    padding: 5px 10px;
+    cursor:move;
+    border-radius:2px;
+    -webkit-transition: background ease-in-out 0.15s;
+    -moz-transition: background ease-in-out 0.15s;
+    transition: background ease-in-out 0.15s;
+    background-color:#f5f5f5;
+    position:relative;
+    z-index:100;
+}
+.widget-list .widget-item:hover {
+    background-color: #d0e2f3;
+    border-color: #57a5ca;
+    border-style: solid;
+}
+
+.form-widget-list ul {
+    margin: 0 0 10px 10px;
+}
+@media (min-width: 1200px){
+    .users-list-checkbox i{
+        display: inline-block;
+    }
+}
+
+@media (min-width:1280px) {
+    .form-widget {
+        width:245px;
+    }
+
+    .form-design {
+        position: relative;
+        width: 59%;
+    }
+}
+@media (min-width: 1440px){
+    .form-widget {
+        width:350px;
+    }
+    .form-design {
+        position: relative;
+        width: 49%;
+    }
+    .widget-item {
+        margin: 6px 2%;
+        width: 46%;
+    }
+}
+@media (min-width: 1700px){
+    .form-widget {
+        width:450px;
+    }
+    .form-design {
+        position: relative;
+        width: 50%;
+    }
+}
+@media (min-width: 1900px){
+    .form-widget {
+        width:25%;
+    }
+    .form-design {
+        position: relative;
+        width: 50%;
+    }
+}
+
+
+
+.widget-item > span {
+    line-height:30px;
+    display:inline-block;
+    color:#666;
+}
+.widget-item span.widgetMark {
+    float:right;
+    font-size:16px;
+}
+.widget-item span.widgetMark .icon-caret-down {
+    margin-right:3px;
+}
+.widget-layout .widget-item span.widgetMark {
+    height:16px;
+    width:16px;
+    margin-top:5px;
+    background:url(../img/icon-widget-layout.png) no-repeat;
+}
+.widget-layout .widget-item span.widgetMark.layout-2{
+    background-position:0 -32px;
+}
+.widget-layout .widget-item span.widgetMark.layout-1{
+    background-position:0 -16px;
+}
+.widget-layout .widget-item span.widgetMark.layout-databox{
+    background-position:0 -0px;
+}
+
+/*=========表单控件设置===========*/
+.form-widgetEdit {
+    border-left:1px solid #ddd;
+}
+.form-Edit-content {
+    padding:20px 15px;
+}
+.form-widgetEdit-content .form-group > .controls {
+    margin-left:15px;
+}
+.form-widgetEdit-content .form-group > label {
+    font-size:14px;
+    color:#666;
+}
+.form-Edit-content h5{
+    margin:0;
+}
+.form-Edit-content h5+div{
+    margin-top:10px;
+}
+.form-Edit-content .edit-tips{
+    padding:10px 15px;
+}
+.form-widgetEdit .radio,
+.form-widgetEdit .checkbox {
+    margin-top:0;
+}
+.form-widgetEdit .radio input[type="radio"],
+.form-widgetEdit .radio-inline input[type="radio"]{
+    margin-top:1px;
+
+.form-view .back-to-edit {
+position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+}/*=========表单区域操作============*/
+.form-layout-toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    line-height: 20px;
+    -webkit-transition: opacity linear 0.15s;
+    -moz-transition: opacity linear 0.15s;
+    transition: opacity linear 0.15s;
+}
+
+.form-layout-toolbar .layoutDele-btn {
+    background: #db4040;
+}
+.form-layout-toolbar span {
+    text-align: center;
+    margin-left: 1px;
+    color: #fff;
+    float: left;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.field-active .widgetDele-btn {
+    display:block;
+}
+.widgetDele-btn {
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top:-12px;
+    color:#d14836;
+    display:none;
+    cursor:pointer;
+    z-index:10;
+}
+
+.required {
+    color: #a94442;
+}
+
+/*对象查看*/
+.content {
+    float: left;
+    width: 32%;
+    margin: 0 .6% 15px;
+    border: 1px solid #ddd;
+    height: 106px;
+}
+.content:hover {
+    border-color: #7ed1ff;
+    background: #f1f9ff;
+}
+
+.content .content-item{
+    padding: 10px 20px 10px 20px;
+}
+
+.content title {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 20px 5px 0;
+    line-height: 1.2;
+    color: #444;
+}
+
+.content .description {
+    margin: 5px 0 0;
+    color: #999;
+}
+
+/*一般样式*/
+.width50{
+    width: 50%;
+}
+.width60{
+    width: 60%;
+}
+.width70{
+    width: 70%;
+}
+.width60{
+    width: 60%;
+}
+
+
+
+
+

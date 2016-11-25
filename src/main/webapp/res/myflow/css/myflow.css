@@ -1,0 +1,587 @@
+@CHARSET "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+
+.view-body {
+    overflow: auto;
+}
+
+.cursor-line {
+    cursor: crosshair;
+}
+
+.mover {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+}
+
+.selected {
+    background-color: #ddd;
+}
+
+.state {
+
+}
+
+#myflow_props table {
+
+}
+
+#myflow_props th {
+    background: #dddddd;
+    font-size: 12px;
+    border-bottom: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+    padding-left: 8px;
+    height: 32px;
+}
+
+#myflow_props td th {
+    padding: 0;
+    background: #EEEEEE;
+}
+
+#myflow_props td {
+    background: #fff;
+    border-bottom: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+    position: relative;
+}
+
+#myflow_props td .editor, #myflow_props td input:not(checked), #myflow_props td select {
+    border: none;
+    width: 100%;
+    height: 100%;
+    min-height: 32px;
+}
+
+#pointer {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#path {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#task {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#state {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ui-widget-header {
+    border: none;
+    height: 20px;
+    clear: both;
+    background-color: #dddddd;
+}
+
+#myflow_tools {
+    position: absolute;
+    top: 50;
+    left: 10;
+    background-color: #fff;
+    width: 70px;
+    cursor: default;
+    padding: 3px;
+    height: auto;
+}
+
+#myflow_props {
+    position: absolute;
+    top: 50;
+    right: 50;
+    background-color: #fff;
+    width: 300px;
+    height:auto;
+    padding: 3px;
+}
+
+ #myflow, #myflow_content {
+    height: 100%;
+}
+
+#myflow_content {
+    background: url(../img/bg.png);
+}
+
+.tab_item {
+    float: left;
+    padding: 6px 16px 4px 16px;
+    cursor: default;
+}
+
+.tab_item_active {
+    background: #FFFFFF;
+}
+
+#json_tab {
+    display: none;
+}
+
+.tab_content {
+    clear: both;
+    overflow: scroll;
+}
+
+.pop-editor-label {
+    background: #DDDDDD;
+    padding-left: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    height: 100%;
+    min-height: 32px;
+    cursor: default;
+}
+
+.pop-editor-panel {
+    border: 1px solid #555555;
+    background: #FFFFFF;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 99;
+    width: 294px;
+    min-height: 32px;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.panel-add-btn {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: default;
+    font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.panel-row-rel {
+    width: 20px;
+    text-align: center;
+}
+
+.width50 {
+    width: 50px;
+    text-align: center;
+}
+
+.width60 {
+    width: 65px;
+    text-align: center;
+}
+
+.panel-row-btn {
+    width: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+#myflow_props td .editor .check-box-item {
+    height: 20px;
+ /*   padding: 6px 0;*/
+    display: block;
+    width: 100%;
+}
+
+#myflow_props td .editor .check-box-item input {
+    width: 14px;
+    height: 14px;
+    min-height: 14px;
+    display: inline-block;
+}
+
+.title-panel {
+    height: 30px;
+    line-height: 30px;
+    background: #F0F0F0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+}
+
+.title-panel-text {
+    margin-left: 16px;
+}
+
+.tuli-panel {
+    background: #F0F0F0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.tuli-panel-item {
+    margin: 0px 4px;
+}
+
+.tuli-panel-item-icon {
+    width: 16px;
+    height: 16px;
+    margin: 7px 2px;
+    border-radius: 3px;
+}
+
+.tuli-panel-item-text {
+    line-height: 30px;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.inline-block {
+    display: inline-block;
+    _zoom: 1;
+    _display: inline;
+    vertical-align: top;
+}
+
+.inline-block {
+    display: inline-block;
+    _zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.state-tooltip {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 999;
+}
+
+.state-tooltip-corn, .state-tooltip-corn-inner {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    display: block;
+    z-index: 999;
+    border-width: 10px;
+    width: 0;
+    height: 0;
+}
+
+.state-tooltip-corn-inner {
+    position: static;
+}
+
+.state-tooltip-corn-top {
+    border-bottom-color: #000000;
+    border-top-width: 0;
+}
+
+.state-tooltip-corn-top .state-tooltip-corn-inner {
+    border-bottom-color: #FFFFFF;
+    border-top-width: 0;
+    margin-left: -10px;
+    margin-top: 1px;
+}
+
+.state-tooltip-corn-bottom {
+    border-top-color: #000000;
+    border-bottom-width: 0;
+}
+
+.state-tooltip-corn-bottom .state-tooltip-corn-inner {
+    border-top-color: #FFFFFF;
+    border-bottom-width: 0;
+    margin-left: -10px;
+    margin-top: -11px;
+}
+
+.state-tooltip-title {
+    background-color: #EEF1F6;
+    border-bottom: 1px solid #ebebeb;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #183986;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.state-tooltip-content {
+    height: 156px;
+    padding: 7px 8px;
+    overflow: auto;
+}
+
+.tooltip-table {
+    width: 100%;
+    height: 100%;
+}
+
+.tooltip-table-label {
+    font-size: 13px;
+}
+
+.tooltip-item-table {
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+.tooltip-item-table th, .tooltip-item-table td {
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 13px;
+}
+
+.tooltip-item-table th {
+    background: #F8F8F8;
+    padding: 4px;
+    color: #6D6D6D;
+}
+
+.tooltip-item-table td {
+    padding: 4px;
+    color: #666666;
+}
+
+.myflow-dialog-panel {
+    width: 800px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+.myflow-dialog-panel-header {
+    height: 30px;
+    width: 100%;
+    background: #F0F0F0;
+}
+
+.myflow-dialog-panel-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 8px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+
+.myflow-dialog-panel-close {
+    width: 24px;
+    height: 24px;
+    float: right;
+    cursor: pointer;
+    margin: 3px 3px 0 0;
+}
+
+.myflow-dialog-panel-body {
+    width: 100%;
+    height: 370px;
+}
+
+.workflow-box {
+    margin: 8px;
+    border: 1px solid #DDDDDD;
+    position: relative;
+}
+
+.box-content {
+    padding-top: 30px;
+    min-height: 100px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.view-box-bg {
+    background: #FFFFFF;
+}
+
+.loading-over-panel {
+    background-color: #000000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    position: absolute;
+    top: 0;
+    lfet: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+}
+
+.loading-info-box {
+    position: absolute;
+    z-index: 9999999;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-top: -18px;
+    margin-left: -120px;
+    background: #EEEEEE;
+    padding: 16px 16px;
+}
+
+.loading-div {
+    display: none;
+}
+
+.flow-view-box {
+    background: #FFFFFF;
+}
+
+.view-box-top {
+    height: 64px;
+    width: 100%;
+    overflow: hidden;
+    background: #F5F5F5;
+}
+
+.view-box-path {
+    margin: 8px;
+    height: 48px;
+    float: left;
+}
+
+.view-box-path-item {
+    float: right;
+    position: relative;
+    border: 1px solid #96C22D;
+    border-right: none;
+    color: #0000FF;
+    background: #D8E9B5;
+}
+
+.view-box-path-item:hover {
+    text-decoration: underline;
+}
+
+.view-box-path-item-text {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.view-box-path-item-corn {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    /* border-left-color: #96C22D; */
+    border-left-color: #70990F;
+    border-right-width: 0;
+    border-width: 21px;
+    right: -42px;
+    top: -1px;
+}
+
+.view-box-path-item-corn-inner {
+    border-color: transparent;
+    border-style: solid;
+    border-left-color: #D8E9B5;
+    border-right-width: 0;
+    border-width: 20px;
+    position: absolute;
+    top: -20px;
+    left: -21px;
+    z-index: 2;
+}
+
+.view-box-path-item-active {
+    color: #000000;
+    background: #FFFFFF;
+}
+
+.view-box-path-item-active .view-box-path-item-corn-inner {
+    border-left-color: #FFFFFF;
+}
+
+.view-box-path-item-active:hover {
+    text-decoration: none;
+}
+
+.view-box-path-item-active .view-box-path-item-text {
+    cursor: default;
+}
+
+.view-box-content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.flow-view-g-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.flow-item-box {
+    position: relative;
+}
+
+.task-content {
+    padding-top: 30px;
+    height: 100px;
+}
+
+.task-rect {
+    width: auto;
+    padding: 5px;
+    background: #FBDDBB;
+    border-radius: 10px;
+    color: #FFFFFF;
+    margin: 16px 16px;
+}
+
+.task-rect .task-rect-bg {
+    line-height: 50px;
+    background: #FFA26C;
+    border-radius: 10px;
+    padding: 0px 5px;
+}
+
+.task-rect-history {
+    background: #D8E9B5;
+}
+
+.task-rect-history .task-rect-bg {
+    background: #A6CE59;
+}
+
+.readonly {
+    background: #EEEEEE;
+}
+
+.pop-panel-header {
+    line-height: 32px;
+}
+
+.pop-panel-close-btn {
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 4px;
+    cursor: pointer;
+}
