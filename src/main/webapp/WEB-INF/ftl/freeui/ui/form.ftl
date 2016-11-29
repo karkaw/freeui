@@ -61,7 +61,7 @@ validate:提交前的验证
                 var form = $("form",$("#${id}"));
                 form.submit();
             <#elseif submitType=="ajax">
-                var form = new UI.Form({id:"${id}", url : "${action}" ,datatype:"json", <#if success != ''>success:${success}</#if>});
+                var form = new UI.Form({id:"${id}", url : "${action}" ,datatype:"json" <#if success != ''>,success:${success}</#if>});
                 <#if refresh>
                     form.setReflush(${refresh?string});
                 </#if>
