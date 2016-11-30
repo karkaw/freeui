@@ -1,4 +1,4 @@
-<#macro ztree id=''  url='' async="false" noneJSONParam="true" paramName="null" params="{}"
+<#macro ztree id=''  url='' async="false" datatype="true" paramName="null" params="{}"
     nodeIdName="id" nodeName="name" simpleData='false' parentIdName="parent_id" showIcon="false"
     onSelected="null">
 
@@ -16,7 +16,7 @@
             url :"${url}",
             async : ${async},
             id : "${id}",
-            noneJSONParam : ${noneJSONParam},
+            datatype : ${datatype},
             paramName : ${paramName},
             params : ${params},
             showIcon : ${showIcon},

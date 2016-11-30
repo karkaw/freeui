@@ -8,7 +8,6 @@ validate:提交前的验证
 	3、刷新
 数据提交：
     submitType:提交方式  default：普通表单提交 提交后转向 submitForward ,ajax ： 使用ajax自动提交 ，hand :自定义函数提交
-    noneJSONParam：提交的时候，参数名称不为“json",false时参数名称为"json",true时为表单指定的名称。
     success:提交成功后，的执行函数
     complete:
     error:
@@ -22,7 +21,7 @@ validate:提交前的验证
 	id="" action="" submitReflush="" redirect="" submitAfter="" showResult="true" col='0'
 	method="post" target="" enctype=""  width="100%" labelWidth="20" required="false"  name=""
 	class="form-horizontal" style="" size="" title="" disabled="" 	onsubmit=""  hasButton=true
-    submitType="ajax" validate="" noneJSONParam="true" paramName="json" success="" refresh=false>
+    submitType="ajax" validate=""   paramName="json" success="" refresh=false datatype="json">
 <form  class="${class}"<#rt/>
  	    method="${method}"<#rt/>
  	    action="${action}"<#rt/>
@@ -33,6 +32,7 @@ validate:提交前的验证
 		<#include "common-attributes.ftl"/><#rt/>
         role="form"
 		>
+        <#assign ff = '${id!}'>
 		<#nested i,true/>
     <#if hasButton>
 	<div class="clearfix form-actions">
@@ -61,7 +61,11 @@ validate:提交前的验证
                 var form = $("form",$("#${id}"));
                 form.submit();
             <#elseif submitType=="ajax">
-                var form = new UI.Form({id:"${id}", url : "${action}" ,datatype:"json" <#if success != ''>,success:${success}</#if>});
+                var form = new UI.Form({
+                    id:"${id}", url : "${action}" ,
+                    datatype:'${datatype}'
+                    <#if success != ''>,success:${success}</#if>
+                });
                 <#if refresh>
                     form.setReflush(${refresh?string});
                 </#if>
@@ -70,12 +74,22 @@ validate:提交前的验证
                 </#if>
                 <#if hasButton>
                     $("#submitBtn",$("#${id}")).on("click",function(){
-                        form.submit(null,submitAfter);
+                        form.submit(null,submitAfter
+                             <#if gg??  >
+                                || function () {
+                                    UI.get("${gg}").hide();
+                                }
+                             </#if>
+                        );
                     });
                 </#if>
                 UI.elements["${id}"] = form ;
             <#else>
-                var form = new UI.Form({id:'${id}', noneJSONParam : ${noneJSONParam}, paramName : '${paramName}', success:${success}});
+                var form = new UI.Form({
+                    id:"${id}", url : "${action}" ,
+                    datatype:'${datatype}'
+                    <#if success != ''>,success:${success}</#if>
+                });
                 form.setUrl("${action}");
                 <#if redirect != "">
                     form.setRedirectUrl("${redirect}");

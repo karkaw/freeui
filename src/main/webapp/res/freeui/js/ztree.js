@@ -17,7 +17,7 @@ UI.ZTree = function (param) {
     // 请求
     this.url = param["url"];
     this.params = param.params || {};
-    this.noneJSONParam = !!param.noneJSONParam; // 提交是的参数名称是否为不为json
+    this.datatype = !!param.datatype; // 提交是的参数名称是否为不为json
     this.paramName = param.paramName || "json"; //如果nonjsonParam为true，则使用该参数指定的名称，如果为空或null，则不提供参数名称。
     this.async = !!param.async;
 
@@ -99,7 +99,7 @@ UI.ZTree = function (param) {
     this.load = function(params, callback){//从服务器获取数据
         params = params || {};
         _this.params = $.extend(_this.params, params);
-        var leader = new  UI.ajax({url:_this.url,data:_this.params, noneJSONParam : _this.noneJSONParam, paramName : this.paramName});
+        var leader = new  UI.ajax({url:_this.url,data:_this.params, datatype : _this.datatype, paramName : this.paramName});
         leader.load(function(data){
             if(!data){
                 return;

@@ -8,3 +8,4 @@ BUG修改
 3、Form 和 Modal提交不能检验表单 已修改（都使用FFORM的表单检验，只需要在相关页面重写validate函数）
 4、FORM查询在分页时参数丢失 已解决  在分页时load时带之前的参数
 5、修改Modal添加按钮时重复添加click事件
+6、Modal提供removeBtn函数。避免连续打开Modal时出现Btn错乱。

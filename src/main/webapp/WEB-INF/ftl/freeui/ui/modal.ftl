@@ -1,4 +1,5 @@
 <#macro modal id='' title='' style="" buttonClass="btn btn-primary" onShow="null" gridId='' form='' showButton=true class="">
+    <#assign gg = '${id!}'>
     <!-- 模态框（Modal） -->
     <div class="modal fade"  <#if id!=''>id="${id}"</#if> tabindex="-1" role="dialog"
          aria-labelledby="<#if id!=''>${id}Lable<#else>modalLable</#if>" aria-hidden="true">
@@ -30,30 +31,53 @@
     <script type="text/javascript" src="${res}/freeui/js/modal.js"></script>
     <script type="text/javascript">
         $(function(){
-            <#if showButton>
-                $("#submitBtn",$("#${id}")).bind("click",function(){
-                    var form ;
-                <#if form!=''>
-                    form =  new UI.get('${form}');
-                <#else >
-                    form =  new UI.Form({id:$("form",$("#${id}"))});
-                </#if>
-                    form.refresh = false ;
-                    form.submit(null,function(){
-                        <#if gridId!=''>
-                            UI.get("${id}").hide();
-                            UI.get("${gridId}").reload();
-                        </#if>
-                        <#if form!=''>
-                            form.removeValues(true)
-                        </#if>
-                    });
-                });
-            </#if>
+            <#--
+                1、默认显示Modal的提交按扭
+                2、不显示Modal的提交按钮，则显示Form的提交按钮
+                3、自定义的提交按钮
+            -->
             UI.elements["${id}"] = new UI.Modal({
                 id : '${id}',
                 onShow : ${onShow}
             });
+
+            var modal = UI.get('${id}');
+            <#if form!=''>
+                var form =  new UI.get('${form}');
+            <#else >
+                var form =  new UI.get("${ff}");
+
+            </#if>
+            <#if showButton>
+                $("#submitBtn",$("#${id}")).unbind("click").bind("click",function(){
+                    modal.getSubmitBtn().click(function () {
+                        form.refresh = false ;
+                        form.submit(null,function(){
+                            sunmitAfter();
+                        });
+                    });
+                })
+            <#else>
+            <#if ff!=''>
+                form.getSubmit().click(function () {
+                    form.submit(null,function () {
+                        sunmitAfter();
+                    })
+                })
+
+
+                var sunmitAfter = function () {
+                    UI.get("${id}").hide();
+                    <#if gridId!=''>
+                        UI.get("${gridId}").reload();
+                    </#if>
+                    <#if form!=''>
+                        form.removeValues(true)
+                    </#if>
+                }
+                <#assign ff = ''>
+            </#if>
+        </#if>
         });
     </script>
 

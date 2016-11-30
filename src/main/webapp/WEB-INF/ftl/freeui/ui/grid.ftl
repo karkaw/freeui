@@ -2,7 +2,7 @@
 表格标签：用于显示列表数据。
 	value：列表数据，可以是Pagination也可以是List。
 -->
- <#macro grid id='' action="list.do" psize='10' height='350px' mutil='true' hasNoPageTool='false' noneJSONParam='true'>
+ <#macro grid id='' action="list.do" psize='10' height='350px' mutil='true' hasNoPageTool='false' datatype='json'>
 	 <#assign mutil=mutil/><#--表头-->
  <div style='overflow:auto;padding-right:18px'>
      <#assign i=-1/><#--表头-->
@@ -34,7 +34,7 @@
                 id:'${id}',
                 url:'${action}',
                 mutil:${mutil},
-                noneJSONParam : ${noneJSONParam},
+                datatype : '${datatype}',
                 hasNoPageTool:${hasNoPageTool}});
 			grid.initPage();
 			grid.load();

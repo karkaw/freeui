@@ -12,8 +12,11 @@ UI.Form = function(params){
 
     this.ele = typeof params["ele"]   == "object" ? params["ele"]   : $("#" +  params["id"]) ;
 
-    /**调用的路径**/
-    this.url = params["url"]||"save.do" ;
+    /**调用的路径
+     * 1、如果id不为空，则找Form默认的Action
+     * 2、如果参数没有URL，则默认是save.do
+     */
+    this.url = params["url"]||_this.ele.action||"save.do" ;
 
     /**是否刷新**/
     this.refresh = params["refresh"] || false;
@@ -102,9 +105,9 @@ UI.Form = function(params){
             alert(data.msg);
         }
 
+        _this.setBtnEnable();
         if(data.code != 200){ //如果从服务器调用失败则不刷新和跳转
             //TODO 处理失败后把按钮置正常
-            _this.setBtnEnable();
             return;
         }
         var returned = false;
@@ -112,9 +115,10 @@ UI.Form = function(params){
         // 如果success返回true，则终止后面的刷新操作
         if(!returned) {
             if(_this.refresh) {
-                setInterval(function(){
+                var timer = setInterval(function(){
                     window.location.href = _this.redirect ;
-                }, 800);
+                    clearInterval(timer);
+                }, 1000);
             } else {
                 _this.removeValues();
             }
@@ -191,6 +195,8 @@ UI.Form = function(params){
 
     //获取提交按钮
     this.getSubmit = function(){
-        return $("#submitBtn",_this.ele) ;
+        var submitBtn = $("#submitBtn",_this.ele);
+        submitBtn.unbind("click");
+        return submitBtn;
     };
 };

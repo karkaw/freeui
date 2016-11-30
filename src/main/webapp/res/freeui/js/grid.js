@@ -6,7 +6,7 @@ UI.Grid =  function(params){
     this.url  =  params["url"] || "list.do" ;
 
     this.params= {} ;
-    this.noneJSONParam = !!params.noneJSONParam; // 提交是的参数名称是否为不为json
+    this.datatype = params.datatype || 'json' // 提交是的参数名称是否为不为json
 
     this.paramName = params.paramName || "json"; //如果nonjsonParam为true，则使用该参数指定的名称，如果为空或null，则不提供参数名称。
 
@@ -122,7 +122,7 @@ UI.Grid =  function(params){
             _this.params["sort"] =sort ;
         }
 
-        var leader = new  UI.ajax({url:_this.url,data:_this.params, noneJSONParam : _this.noneJSONParam, paramName : this.paramName});
+        var leader = new  UI.ajax({url:_this.url,data:_this.params, datatype : _this.datatype, paramName : this.paramName});
         leader.load(function(data){
             if(!data){
                 return;

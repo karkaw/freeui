@@ -7,6 +7,11 @@ UI.Modal = function(param){
     this.onShow = param.onShow || function(){};
     this.params = {};
 
+    this.setTitle = function (lable) {
+        $(_this.id + "Lable").text(lable);
+        return this;
+    }
+
     /**设置参数**/
     this.setParams = function (param){
         for(var key in param ){
@@ -47,6 +52,15 @@ UI.Modal = function(param){
             return $("#"+id);
         }
     };
+
+    /**清空默认的Btn**/
+    this.removeBtn = function (id) {
+        if(id){
+
+        }else{
+            _this.ele.find(".modal-footer").empty();
+        }
+    }
 
 
     //获取提交按钮

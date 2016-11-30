@@ -1,5 +1,5 @@
 <#macro treetable id='' hasHead=true url='' nodeIdName="id" height='auto' parentIdName="parent_id" mutil="true"
-    onSelected="null" beforeLoadTree="null" noneJSONParam="true" params="{}">
+    onSelected="null" beforeLoadTree="null" datatype="true" params="{}">
 
     <script type="text/javascript">
         window.TreeTable || document.write("<link rel='stylesheet' href='${res}/jquery-treetable/css/jquery.treetable.css'/>"
@@ -39,7 +39,7 @@
             url :"${url}",
             id : "${id}",
             mutil: ${mutil},
-            noneJSONParam : ${noneJSONParam},
+            datatype : ${datatype},
             params : ${params},
             nodeIdName : '${nodeIdName}',
             parentIdName : '${parentIdName}'
