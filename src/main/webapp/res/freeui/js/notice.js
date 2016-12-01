@@ -17,8 +17,6 @@ Notice = function(){
 								'<div class="gritter-bottom"></div>'+
 							'</div>'+
 						'</div>';
-		
-	
-		$(html).appendTo("body");
+			$(html).appendTo("body");
 		};
 };

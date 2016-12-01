@@ -6,7 +6,7 @@ UI.Grid =  function(params){
     this.url  =  params["url"] || "list.do" ;
 
     this.params= {} ;
-    this.datatype = params.datatype || 'json' // 提交是的参数名称是否为不为json
+    this.datatype = params.datatype || 'json' ;// 提交是的参数名称是否为不为json
 
     this.paramName = params.paramName || "json"; //如果nonjsonParam为true，则使用该参数指定的名称，如果为空或null，则不提供参数名称。
 

@@ -58,26 +58,24 @@
                     });
                 })
             <#else>
-            <#if ff!=''>
-                form.getSubmit().click(function () {
-                    form.submit(null,function () {
-                        sunmitAfter();
+                <#if ff!=''>
+                    form.getSubmit().click(function () {
+                        form.submit(null,function () {
+                            sunmitAfter();
+                        })
                     })
-                })
-
-
-                var sunmitAfter = function () {
-                    UI.get("${id}").hide();
-                    <#if gridId!=''>
-                        UI.get("${gridId}").reload();
-                    </#if>
-                    <#if form!=''>
-                        form.removeValues(true)
-                    </#if>
-                }
-                <#assign ff = ''>
+                    <#assign ff = ''>
+                </#if>
             </#if>
-        </#if>
+            var sunmitAfter = function () {
+                UI.get("${id}").hide();
+                <#if gridId!=''>
+                    UI.get("${gridId}").reload();
+                </#if>
+                <#if form!=''>
+                    form.removeValues(true)
+                </#if>
+            }
         });
     </script>
 
